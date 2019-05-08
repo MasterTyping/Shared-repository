@@ -998,3 +998,294 @@ LogInit: Object subsystem initialized
 [2019.05.08-15.21.03:670][425]LogFileHelpers: Saving map 'Room1' took 1.303
 [2019.05.08-15.21.04:417][425]LogSavePackage: Moving '../../../../../Documents/Shared-repository/TowerofAngra/Debug/projectlevel/Saved/Room3CD16E5094909D028B55451B518FBF4B6.tmp' to '../../../../../Documents/Shared-repository/TowerofAngra/Debug/projectlevel/Content/TowerofAngra/Maps/Room3.umap'
 [2019.05.08-15.21.04:423][425]LogFileHelpers: Saving map 'Room3' took 0.750
+[2019.05.08-15.25.37:637][287]LogEditorViewport: Clicking on Actor (LMB): Base_01_C (Base_12)
+[2019.05.08-15.26.16:034][894]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2019.05.08-15.27.18:656][625]Running D:/UnrealEngine/UE_4.20/Engine/Binaries/DotNET/UnrealBuildTool.exe Win64 Development -TargetType=Editor -Project="D:/Documents/Shared-repository/TowerofAngra/Debug/projectlevel/projectlevel.uproject" -invalidatemakefilesonly
+[2019.05.08-15.27.19:861][625]Invalidating makefiles only in this run.
+[2019.05.08-15.27.19:996][625]Candidate modules for hot reload:
+[2019.05.08-15.27.19:997][625]  projectlevel
+[2019.05.08-15.27.19:997][625]Launching UnrealBuildTool... [D:/UnrealEngine/UE_4.20/Engine/Binaries/DotNET/UnrealBuildTool.exe  -ModuleWithSuffix=projectlevel,7919 Win64 Development -TargetType=Editor -Project="../../../../../Documents/Shared-repository/TowerofAngra/Debug/projectlevel/projectlevel.uproject" -canskiplink "D:/Documents/Shared-repository/TowerofAngra/Debug/projectlevel/projectlevel.uproject" ]
+[2019.05.08-15.28.19:626][625]CompilerResultsLog: New page: 컴파일 - 2019. 5. 9. 오전 9:28:19
+[2019.05.08-15.28.19:627][625]CompilerResultsLog: Creating makefile for hot reloading projectlevelEditor (no existing makefile)
+[2019.05.08-15.28.19:627][625]CompilerResultsLog: Compiling game modules for hot reload
+[2019.05.08-15.28.19:627][625]CompilerResultsLog: Using Visual Studio 2017 14.16.27023 toolchain (D:\VisualStudio\VC\Tools\MSVC\14.16.27023) and Windows 10.0.17763.0 SDK (D:\Windows Kits\10).
+[2019.05.08-15.28.19:627][625]CompilerResultsLog: Parsing headers for projectlevelEditor
+[2019.05.08-15.28.19:627][625]CompilerResultsLog:   Running UnrealHeaderTool "D:\Documents\Shared-repository\TowerofAngra\Debug\projectlevel\projectlevel.uproject" "D:\Documents\Shared-repository\TowerofAngra\Debug\projectlevel\Intermediate\Build\Win64\projectlevelEditor\Development\projectlevelEditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -installed
+[2019.05.08-15.28.19:628][625]CompilerResultsLog: Reflection code generated for projectlevelEditor in 12.6354477 seconds
+[2019.05.08-15.28.19:628][625]CompilerResultsLog: Building 5 actions with 16 processes...
+[2019.05.08-15.28.19:628][625]CompilerResultsLog:   [1/5] projectlevel.init.gen.cpp
+[2019.05.08-15.28.19:629][625]CompilerResultsLog:   [2/5] Chest.cpp
+[2019.05.08-15.28.19:629][625]CompilerResultsLog:   [3/5] Chest.gen.cpp
+[2019.05.08-15.28.19:629][625]CompilerResultsLog:   [4/5] UE4Editor-projectlevel-7919.lib
+[2019.05.08-15.28.19:629][625]CompilerResultsLog:      D:\Documents\Shared-repository\TowerofAngra\Debug\projectlevel\Intermediate\Build\Win64\UE4Editor\Development\projectlevel\UE4Editor-projectlevel-7919.lib ???????? ?? D:\Documents\Shared-repository\TowerofAngra\Debug\projectlevel\Intermediate\Build\Win64\UE4Editor\Development\projectlevel\UE4Editor-projectlevel-7919.exp ??u?? ??????? ??????.
+[2019.05.08-15.28.19:630][625]CompilerResultsLog:   [5/5] UE4Editor-projectlevel-7919.dll
+[2019.05.08-15.28.19:630][625]CompilerResultsLog:      D:\Documents\Shared-repository\TowerofAngra\Debug\projectlevel\Intermediate\Build\Win64\UE4Editor\Development\projectlevel\UE4Editor-projectlevel-7919.suppressed.lib ???????? ?? D:\Documents\Shared-repository\TowerofAngra\Debug\projectlevel\Intermediate\Build\Win64\UE4Editor\Development\projectlevel\UE4Editor-projectlevel-7919.suppressed.exp ??u?? ??????? ??????.
+[2019.05.08-15.28.19:630][625]CompilerResultsLog: Total build time: 59.31 seconds (Parallel executor: 7.83 seconds)
+[2019.05.08-15.28.19:631][625]LogMainFrame: MainFrame: Module compiling took 59.647 seconds
+[2019.05.08-15.28.19:706][625]LogClass: Could not find existing class Chest in package /Script/projectlevel for HotReload, assuming new class
+[2019.05.08-15.28.19:746][625]LogClass: Weapon HotReload.
+[2019.05.08-15.28.19:754][625]LogHotReload: Re-instancing LevelChanger after hot-reload.
+[2019.05.08-15.28.19:965][625]LogClass: MainPlayerController!
+[2019.05.08-15.28.19:965][625]LogHotReload: Re-instancing MainPlayerController after hot-reload.
+[2019.05.08-15.28.19:970][625]LogClass: MainPlayerController!
+[2019.05.08-15.28.19:972][625]LogClass: MainPlayerController!
+[2019.05.08-15.28.20:176][625]LogHotReload: Re-instancing PickableItem after hot-reload.
+[2019.05.08-15.28.20:375][625]LogScript: Warning: Script Msg: No world was found for object (/Script/projectlevel.Default__projectlevelGameMode) passed in to UEngine::GetWorldFromContextObject().
+[2019.05.08-15.28.20:376][625]LogHotReload: Re-instancing SkillEffect after hot-reload.
+[2019.05.08-15.28.20:576][625]LogHotReload: Re-instancing UIPlayerController after hot-reload.
+[2019.05.08-15.28.20:781][625]LogContentBrowser: Native class hierarchy updated for 'projectlevel' in 0.0068 seconds. Added 13 classes and 2 folders.
+[2019.05.08-15.28.20:788][625]Display: HotReload successful (6 functions remapped  0 scriptstructs remapped)
+[2019.05.08-15.28.21:487][625]LogContentBrowser: Native class hierarchy populated in 0.0160 seconds. Added 2588 classes and 610 folders.
+[2019.05.08-15.28.21:488][625]Display: HotReload took 61.5s.
+[2019.05.08-15.28.21:489][625]Warning: HotReload operation took 61.5s.
+[2019.05.08-15.28.22:799][625]LogSlate: Window 'C++ 클래스 추가' being destroyed
+[2019.05.08-15.28.22:813][625]LogHotReload: New module detected: UE4Editor-projectlevel-7919.dll
+[2019.05.08-15.28.22:893][626]LogHotReload: Starting Hot-Reload from IDE
+[2019.05.08-15.28.23:079][626]LogContentBrowser: Native class hierarchy updated for 'projectlevel' in 0.0015 seconds. Added 13 classes and 2 folders.
+[2019.05.08-15.28.23:087][626]Display: HotReload successful (0 functions remapped  0 scriptstructs remapped)
+[2019.05.08-15.28.23:579][626]LogContentBrowser: Native class hierarchy populated in 0.0142 seconds. Added 2588 classes and 610 folders.
+[2019.05.08-15.28.23:593][626]Display: HotReload took  0.7s.
+[2019.05.08-15.34.24:165][760]LogHotReload: New module detected: UE4Editor-projectlevel-6842.dll
+[2019.05.08-15.34.25:870][766]LogHotReload: Starting Hot-Reload from IDE
+[2019.05.08-15.34.26:010][766]LogClass: Could not find existing class Chest in package /Script/projectlevel for HotReload, assuming new class
+[2019.05.08-15.34.26:047][766]LogClass: Weapon HotReload.
+[2019.05.08-15.34.26:078][766]LogHotReload: Re-instancing Chest after hot-reload.
+[2019.05.08-15.34.26:277][766]LogHotReload: Re-instancing LevelChanger after hot-reload.
+[2019.05.08-15.34.26:473][766]LogClass: MainPlayerController!
+[2019.05.08-15.34.26:474][766]LogHotReload: Re-instancing PickableItem after hot-reload.
+[2019.05.08-15.34.26:666][766]LogScript: Warning: Script Msg: No world was found for object (/Script/projectlevel.Default__projectlevelGameMode) passed in to UEngine::GetWorldFromContextObject().
+[2019.05.08-15.34.26:670][766]LogContentBrowser: Native class hierarchy updated for 'projectlevel' in 0.0016 seconds. Added 13 classes and 2 folders.
+[2019.05.08-15.34.26:677][766]Display: HotReload successful (6 functions remapped  0 scriptstructs remapped)
+[2019.05.08-15.34.27:131][766]LogContentBrowser: Native class hierarchy populated in 0.0136 seconds. Added 2588 classes and 610 folders.
+[2019.05.08-15.34.27:144][766]Display: HotReload took  1.3s.
+[2019.05.08-15.34.32:523][906]LogEditor: Attempting to add actor of class 'Chest' to level at 2410.00,-1130.00,200.00
+[2019.05.08-15.34.32:524][906]LogActor: Warning: Chest /Game/TowerofAngra/Maps/Room1.Room1:PersistentLevel.Chest_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2019.05.08-15.34.32:813][923]LogEditor: Attempting to add actor of class 'Chest' to level at 1880.00,-980.00,200.00
+[2019.05.08-15.34.32:815][923]LogActor: Warning: Chest /Game/TowerofAngra/Maps/Room1.Room1:PersistentLevel.Chest_1 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2019.05.08-15.34.36:639][243]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2019.05.08-15.34.52:766][437]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2019.05.08-15.35.00:813][121]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2019.05.08-15.35.08:509][790]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2019.05.08-15.35.47:621][234]LogEditorViewport: Clicking on Actor (LMB): Base_01_C (Base_53)
+[2019.05.08-15.35.54:887][865]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2019.05.08-15.35.59:244][240]LogEditorViewport: Clicking on Actor (LMB): Chest (Chest1)
+[2019.05.08-15.36.00:492][346]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2019.05.08-15.36.15:258][679]LogEditorViewport: Clicking on Component (LMB): StaticMeshComponent (head)
+[2019.05.08-15.36.15:901][733]LogEditorViewport: Clicking on Actor (LMB): Base_01_C (Base_53)
+[2019.05.08-15.36.26:783][727]LogEditorViewport: Clicking on Actor (LMB): Chest (Chest1)
+[2019.05.08-15.36.50:436][890]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2019.05.08-15.37.24:663][714]LogSavePackage: Moving '../../../../../Documents/Shared-repository/TowerofAngra/Debug/projectlevel/Saved/Room1_Auto4806526674FB37D646CE7E685146C985B.tmp' to '../../../../../Documents/Shared-repository/TowerofAngra/Debug/projectlevel/Saved/Autosaves/Game/TowerofAngra/Maps/Room1_Auto4.umap'
+[2019.05.08-15.37.25:219][714]LogSavePackage: Moving '../../../../../Documents/Shared-repository/TowerofAngra/Debug/projectlevel/Saved/Room3_Auto49516F1164FE8ACBF218355AB38E38049.tmp' to '../../../../../Documents/Shared-repository/TowerofAngra/Debug/projectlevel/Saved/Autosaves/Game/TowerofAngra/Maps/Room3_Auto4.umap'
+[2019.05.08-15.37.25:229][714]LogFileHelpers: Editor autosave (incl. sublevels) for '/Game/TowerofAngra/Maps/Stage1' took 1.768
+[2019.05.08-15.37.25:229][714]LogFileHelpers: Editor autosave (incl. sublevels) for all levels took 1.768
+[2019.05.08-15.39.40:284][485]LogHotReload: New module detected: UE4Editor-projectlevel-9271.dll
+[2019.05.08-15.39.42:003][491]LogHotReload: Starting Hot-Reload from IDE
+[2019.05.08-15.39.42:150][491]LogClass: Weapon HotReload.
+[2019.05.08-15.39.42:153][491]LogHotReload: Re-instancing Chest after hot-reload.
+[2019.05.08-15.39.42:154][491]LogActor: Warning: Chest /Game/TowerofAngra/Maps/Room1.Room1:PersistentLevel.Chest_1 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2019.05.08-15.39.42:371][491]LogHotReload: Re-instancing LevelChanger after hot-reload.
+[2019.05.08-15.39.42:568][491]LogClass: MainPlayerController!
+[2019.05.08-15.39.42:570][491]LogHotReload: Re-instancing PickableItem after hot-reload.
+[2019.05.08-15.39.42:762][491]LogScript: Warning: Script Msg: No world was found for object (/Script/projectlevel.Default__projectlevelGameMode) passed in to UEngine::GetWorldFromContextObject().
+[2019.05.08-15.39.42:766][491]LogContentBrowser: Native class hierarchy updated for 'projectlevel' in 0.0017 seconds. Added 13 classes and 2 folders.
+[2019.05.08-15.39.42:773][491]Display: HotReload successful (6 functions remapped  0 scriptstructs remapped)
+[2019.05.08-15.39.43:237][491]LogContentBrowser: Native class hierarchy populated in 0.0140 seconds. Added 2588 classes and 610 folders.
+[2019.05.08-15.39.43:249][491]Display: HotReload took  1.2s.
+[2019.05.08-15.40.13:831][882]LogEditorViewport: Clicking on Component (LMB): StaticMeshComponent (body)
+[2019.05.08-15.40.14:881][968]LogEditorViewport: Clicking on Component (LMB): StaticMeshComponent (body)
+[2019.05.08-15.40.15:921][ 57]LogEditorViewport: Clicking on Component (LMB): StaticMeshComponent (head)
+[2019.05.08-15.40.20:049][360]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2019.05.08-15.40.20:657][406]Cmd: DELETE
+[2019.05.08-15.40.20:658][406]Cmd: ACTOR DELETE
+[2019.05.08-15.40.20:697][406]LogEditorActor: Deleted Actor: Chest
+[2019.05.08-15.40.20:797][406]LogEditorActor: Deleted 1 Actors (0.137 secs)
+[2019.05.08-15.40.31:502][ 49]LogEditor: Attempting to add actor of class 'Chest' to level at 1438.00,-1721.00,200.00
+[2019.05.08-15.40.31:503][ 49]LogActor: Warning: Chest /Game/TowerofAngra/Maps/Room1.Room1:PersistentLevel.Chest_4 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2019.05.08-15.40.33:137][209]LogEditor: Attempting to add actor of class 'Chest' to level at 1736.00,-1103.00,200.00
+[2019.05.08-15.40.33:140][209]LogActor: Warning: Chest /Game/TowerofAngra/Maps/Room1.Room1:PersistentLevel.Chest_5 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2019.05.08-15.40.37:989][642]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2019.05.08-15.41.06:314][890]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2019.05.08-15.41.40:853][637]LogSlate: FSceneViewport::OnFocusLost() reason 2
+[2019.05.08-15.42.10:375][255]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2019.05.08-15.42.29:121][889]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2019.05.08-15.42.36:463][544]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2019.05.08-15.47.21:870][548]LogHotReload: New module detected: UE4Editor-projectlevel-1716.dll
+[2019.05.08-15.47.23:581][554]LogHotReload: Starting Hot-Reload from IDE
+[2019.05.08-15.47.23:735][554]LogClass: Weapon HotReload.
+[2019.05.08-15.47.23:739][554]LogHotReload: Re-instancing Chest after hot-reload.
+[2019.05.08-15.47.23:740][554]LogActor: Warning: Chest /Game/TowerofAngra/Maps/Room1.Room1:PersistentLevel.Chest_5 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2019.05.08-15.47.23:962][554]LogHotReload: Re-instancing LevelChanger after hot-reload.
+[2019.05.08-15.47.24:161][554]LogClass: MainPlayerController!
+[2019.05.08-15.47.24:162][554]LogHotReload: Re-instancing PickableItem after hot-reload.
+[2019.05.08-15.47.24:354][554]LogScript: Warning: Script Msg: No world was found for object (/Script/projectlevel.Default__projectlevelGameMode) passed in to UEngine::GetWorldFromContextObject().
+[2019.05.08-15.47.24:358][554]LogContentBrowser: Native class hierarchy updated for 'projectlevel' in 0.0016 seconds. Added 13 classes and 2 folders.
+[2019.05.08-15.47.24:365][554]Display: HotReload successful (6 functions remapped  0 scriptstructs remapped)
+[2019.05.08-15.47.24:834][554]LogContentBrowser: Native class hierarchy populated in 0.0155 seconds. Added 2588 classes and 610 folders.
+[2019.05.08-15.47.24:847][554]Display: HotReload took  1.3s.
+[2019.05.08-15.47.29:403][564]LogSavePackage: Moving '../../../../../Documents/Shared-repository/TowerofAngra/Debug/projectlevel/Saved/Room1_Auto5EA2C5D4040E21CC04929FDA5FFFEF8ED.tmp' to '../../../../../Documents/Shared-repository/TowerofAngra/Debug/projectlevel/Saved/Autosaves/Game/TowerofAngra/Maps/Room1_Auto5.umap'
+[2019.05.08-15.47.29:937][564]LogSavePackage: Moving '../../../../../Documents/Shared-repository/TowerofAngra/Debug/projectlevel/Saved/Room3_Auto549E72FAF487B4CA3F6B1A8995A5C99CE.tmp' to '../../../../../Documents/Shared-repository/TowerofAngra/Debug/projectlevel/Saved/Autosaves/Game/TowerofAngra/Maps/Room3_Auto5.umap'
+[2019.05.08-15.47.29:942][564]LogFileHelpers: Editor autosave (incl. sublevels) for '/Game/TowerofAngra/Maps/Stage1' took 1.693
+[2019.05.08-15.47.29:942][564]LogFileHelpers: Editor autosave (incl. sublevels) for all levels took 1.693
+[2019.05.08-15.48.17:180][911]LogEditorViewport: Clicking on Component (LMB): StaticMeshComponent (head)
+[2019.05.08-15.48.20:075][177]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2019.05.08-15.48.20:373][201]Cmd: DELETE
+[2019.05.08-15.48.20:373][201]Cmd: ACTOR DELETE
+[2019.05.08-15.48.20:409][201]LogEditorActor: Deleted Actor: Chest
+[2019.05.08-15.48.20:473][201]LogEditorActor: Deleted 1 Actors (0.099 secs)
+[2019.05.08-15.48.21:915][331]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2019.05.08-15.48.22:302][364]LogActor: Warning: Chest /Engine/Transient.World_12:PersistentLevel.Chest_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2019.05.08-15.48.30:544][228]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2019.05.08-15.48.30:746][245]LogEditor: Attempting to add actor of class 'Chest' to level at 654.00,-901.00,200.00
+[2019.05.08-15.48.30:746][245]LogActor: Warning: Chest /Game/TowerofAngra/Maps/Room1.Room1:PersistentLevel.Chest_7 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2019.05.08-15.48.31:053][263]LogEditor: Attempting to add actor of class 'Chest' to level at 1575.00,-834.00,200.00
+[2019.05.08-15.48.31:055][263]LogActor: Warning: Chest /Game/TowerofAngra/Maps/Room1.Room1:PersistentLevel.Chest_8 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2019.05.08-15.48.33:340][457]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2019.05.08-15.48.55:385][344]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2019.05.08-15.48.55:789][378]Cmd: DELETE
+[2019.05.08-15.48.55:790][378]Cmd: ACTOR DELETE
+[2019.05.08-15.48.55:826][378]LogEditorActor: Deleted Actor: Chest
+[2019.05.08-15.48.55:867][378]LogEditorActor: Deleted 1 Actors (0.077 secs)
+[2019.05.08-15.49.40:525][630]LogTemp: Repeating last play command: 선택된 뷰포트
+[2019.05.08-15.49.40:551][630]LogBlueprintUserMessages: Early PlayInEditor Detection: Level '/Game/TowerofAngra/Maps/Stage1.Stage1:PersistentLevel' has LevelScriptBlueprint '/Game/TowerofAngra/Maps/Stage1.Stage1:PersistentLevel.Stage1' with GeneratedClass '/Game/TowerofAngra/Maps/Stage1.Stage1_C' with ClassGeneratedBy '/Game/TowerofAngra/Maps/Stage1.Stage1:PersistentLevel.Stage1'
+[2019.05.08-15.49.40:566][630]LogPlayLevel: PlayLevel: No blueprints needed recompiling
+[2019.05.08-15.49.40:568][630]PIE: New page: PIE 세션: Stage1 (2019. 5. 9. 오전 9:49:40)
+[2019.05.08-15.49.40:569][630]LogPlayLevel: Creating play world package: /Game/TowerofAngra/Maps/UEDPIE_0_Stage1
+[2019.05.08-15.49.40:587][630]LogPlayLevel: PIE: StaticDuplicateObject took: (0.017940s)
+[2019.05.08-15.49.40:591][630]LogAIModule: Creating AISystem for world Stage1
+[2019.05.08-15.49.40:592][630]LogPlayLevel: PIE: World Init took: (0.005113s)
+[2019.05.08-15.49.40:593][630]LogPlayLevel: PIE: Created PIE world by copying editor world from /Game/TowerofAngra/Maps/Stage1.Stage1 to /Game/TowerofAngra/Maps/UEDPIE_0_Stage1.Stage1 (0.024762s)
+[2019.05.08-15.49.40:689][630]LogInit: XAudio2 using '스피커(5- USB Audio Device)' : 2 channels at 48 kHz using 16 bits per sample (channel mask 0x3)
+[2019.05.08-15.49.40:747][630]LogInit: FAudioDevice initialized.
+[2019.05.08-15.49.40:789][630]LogLoad: Game class is 'MyprojectlevelGameMode_C'
+[2019.05.08-15.49.40:789][630]LogLevel: Warning: Failed to find streaming level object associated with 'Stage1'
+[2019.05.08-15.49.40:793][630]LogWorld: Bringing World /Game/TowerofAngra/Maps/UEDPIE_0_Stage1.Stage1 up for play (max tick rate 0) at 2019.05.09-00.49.40
+[2019.05.08-15.49.40:800][630]LogWorld: Bringing up level for play took: 0.009404
+[2019.05.08-15.49.40:814][630]LogClass: MainPlayerController!
+[2019.05.08-15.49.40:822][630]LogLevel: ActivateLevel /Game/TowerofAngra/Maps/UEDPIE_0_Room1 1 1 0
+[2019.05.08-15.49.40:845][630]PIE: /Game/TowerofAngra/Maps/UEDPIE_0_Stage1 에 대한 에디터에서 플레이 시작 시간: 0.592
+[2019.05.08-15.49.40:846][630]LogBlueprintUserMessages: Late PlayInEditor Detection: Level '/Game/TowerofAngra/Maps/Stage1.Stage1:PersistentLevel' has LevelScriptBlueprint '/Game/TowerofAngra/Maps/Stage1.Stage1:PersistentLevel.Stage1' with GeneratedClass '/Game/TowerofAngra/Maps/Stage1.Stage1_C' with ClassGeneratedBy '/Game/TowerofAngra/Maps/Stage1.Stage1:PersistentLevel.Stage1'
+[2019.05.08-15.49.41:139][638]LogStreaming: Display: UWorld::AddToWorld: routing Initialize on actors for /Game/TowerofAngra/Maps/UEDPIE_0_Room1 took (less than) 98.30 ms
+[2019.05.08-15.49.41:933][712]LogBlueprintUserMessages: Early EndPlayMap Detection: Level '/Game/TowerofAngra/Maps/Stage1.Stage1:PersistentLevel' has LevelScriptBlueprint '/Game/TowerofAngra/Maps/Stage1.Stage1:PersistentLevel.Stage1' with GeneratedClass '/Game/TowerofAngra/Maps/Stage1.Stage1_C' with ClassGeneratedBy '/Game/TowerofAngra/Maps/Stage1.Stage1:PersistentLevel.Stage1'
+[2019.05.08-15.49.41:939][712]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2019.05.08-15.49.41:990][712]LogPlayLevel: Display: Shutting down PIE online subsystems
+[2019.05.08-15.49.41:990][712]LogBlueprintUserMessages: Late EndPlayMap Detection: Level '/Game/TowerofAngra/Maps/Stage1.Stage1:PersistentLevel' has LevelScriptBlueprint '/Game/TowerofAngra/Maps/Stage1.Stage1:PersistentLevel.Stage1' with GeneratedClass '/Game/TowerofAngra/Maps/Stage1.Stage1_C' with ClassGeneratedBy '/Game/TowerofAngra/Maps/Stage1.Stage1:PersistentLevel.Stage1'
+[2019.05.08-15.49.42:039][712]LogSlate: Updating window title bar state: overlay mode, drag disabled, window buttons hidden, title bar hidden
+[2019.05.08-15.49.42:079][713]LogPlayLevel: Display: Destroying online subsystem :Context_21
+[2019.05.08-15.49.43:948][875]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2019.05.08-15.49.44:152][890]LogEditor: Attempting to add actor of class 'Chest' to level at 2621.00,-2722.00,382.00
+[2019.05.08-15.49.44:152][890]LogActor: Warning: Chest /Game/TowerofAngra/Maps/Room1.Room1:PersistentLevel.Chest_9 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2019.05.08-15.49.44:458][909]LogEditor: Attempting to add actor of class 'Chest' to level at 1411.00,-1560.00,200.00
+[2019.05.08-15.49.44:460][909]LogActor: Warning: Chest /Game/TowerofAngra/Maps/Room1.Room1:PersistentLevel.Chest_10 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2019.05.08-15.49.46:223][ 51]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2019.05.08-15.50.09:317][961]Cmd: TRANSACTION UNDO
+[2019.05.08-15.50.09:322][961]LogEditorTransaction: Undo 컴포넌트 이동
+[2019.05.08-15.50.10:662][ 63]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2019.05.08-15.50.13:236][283]Cmd: TRANSACTION UNDO
+[2019.05.08-15.50.13:237][283]LogEditorTransaction: Undo 컴포넌트 이동
+[2019.05.08-15.50.14:452][378]Cmd: TRANSACTION UNDO
+[2019.05.08-15.50.14:452][378]LogEditorTransaction: Undo 컴포넌트에 클릭 (트리 뷰)
+[2019.05.08-15.50.15:714][482]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2019.05.08-15.51.40:169][578]LogHotReload: New module detected: UE4Editor-projectlevel-1415.dll
+[2019.05.08-15.51.41:870][584]LogHotReload: Starting Hot-Reload from IDE
+[2019.05.08-15.51.41:953][584]LogClass: Could not find existing class Chest in package /Script/projectlevel for HotReload, assuming new class
+[2019.05.08-15.51.41:990][584]LogClass: Weapon HotReload.
+[2019.05.08-15.51.42:021][584]LogHotReload: Re-instancing Chest after hot-reload.
+[2019.05.08-15.51.42:022][584]LogActor: Warning: Chest /Engine/Transient.World_12:PersistentLevel.Chest_0 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2019.05.08-15.51.42:023][584]LogActor: Warning: Chest /Game/TowerofAngra/Maps/Room1.Room1:PersistentLevel.Chest_10 has natively added scene component(s), but none of them were set as the actor's RootComponent - picking one arbitrarily
+[2019.05.08-15.51.42:253][584]LogHotReload: Re-instancing LevelChanger after hot-reload.
+[2019.05.08-15.51.42:451][584]LogClass: MainPlayerController!
+[2019.05.08-15.51.42:453][584]LogHotReload: Re-instancing PickableItem after hot-reload.
+[2019.05.08-15.51.42:641][584]LogScript: Warning: Script Msg: No world was found for object (/Script/projectlevel.Default__projectlevelGameMode) passed in to UEngine::GetWorldFromContextObject().
+[2019.05.08-15.51.42:646][584]LogContentBrowser: Native class hierarchy updated for 'projectlevel' in 0.0018 seconds. Added 13 classes and 2 folders.
+[2019.05.08-15.51.42:652][584]Display: HotReload successful (6 functions remapped  0 scriptstructs remapped)
+[2019.05.08-15.51.43:116][584]LogContentBrowser: Native class hierarchy populated in 0.0135 seconds. Added 2588 classes and 610 folders.
+[2019.05.08-15.51.43:127][584]Display: HotReload took  1.3s.
+[2019.05.08-15.52.18:230][924]LogEditorViewport: Clicking on Actor (LMB): Chest (Chest10)
+[2019.05.08-15.52.19:004][988]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2019.05.08-15.53.50:884][ 59]LogHotReload: New module detected: UE4Editor-projectlevel-2848.dll
+[2019.05.08-15.53.52:585][ 65]LogHotReload: Starting Hot-Reload from IDE
+[2019.05.08-15.53.52:727][ 65]LogClass: Could not find existing class Chest in package /Script/projectlevel for HotReload, assuming new class
+[2019.05.08-15.53.52:770][ 65]LogClass: Weapon HotReload.
+[2019.05.08-15.53.52:801][ 65]LogHotReload: Re-instancing Chest after hot-reload.
+[2019.05.08-15.53.53:061][ 65]LogHotReload: Re-instancing LevelChanger after hot-reload.
+[2019.05.08-15.53.53:300][ 65]LogClass: MainPlayerController!
+[2019.05.08-15.53.53:302][ 65]LogHotReload: Re-instancing PickableItem after hot-reload.
+[2019.05.08-15.53.53:530][ 65]LogScript: Warning: Script Msg: No world was found for object (/Script/projectlevel.Default__projectlevelGameMode) passed in to UEngine::GetWorldFromContextObject().
+[2019.05.08-15.53.53:535][ 65]LogContentBrowser: Native class hierarchy updated for 'projectlevel' in 0.0016 seconds. Added 13 classes and 2 folders.
+[2019.05.08-15.53.53:542][ 65]Display: HotReload successful (6 functions remapped  0 scriptstructs remapped)
+[2019.05.08-15.53.54:038][ 65]LogContentBrowser: Native class hierarchy populated in 0.0140 seconds. Added 2588 classes and 610 folders.
+[2019.05.08-15.53.54:050][ 65]Display: HotReload took  1.5s.
+[2019.05.08-15.53.59:932][119]LogEditorViewport: Clicking on Component (LMB): StaticMeshComponent (body)
+[2019.05.08-15.54.01:401][242]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2019.05.08-15.54.01:607][257]Cmd: DELETE
+[2019.05.08-15.54.01:607][257]Cmd: ACTOR DELETE
+[2019.05.08-15.54.01:642][257]LogEditorActor: Deleted Actor: Chest
+[2019.05.08-15.54.01:734][257]LogEditorActor: Deleted 1 Actors (0.127 secs)
+[2019.05.08-15.54.03:710][436]LogEditor: Attempting to add actor of class 'Chest' to level at 2635.00,-2136.00,333.00
+[2019.05.08-15.54.03:997][453]LogEditor: Attempting to add actor of class 'Chest' to level at 1627.00,-1536.00,200.00
+[2019.05.08-15.54.08:910][807]Cmd: DELETE
+[2019.05.08-15.54.08:910][807]Cmd: ACTOR DELETE
+[2019.05.08-15.54.08:946][807]LogEditorActor: Deleted Actor: Chest
+[2019.05.08-15.54.09:009][807]LogEditorActor: Deleted 1 Actors (0.099 secs)
+[2019.05.08-15.57.35:417][467]LogSavePackage: Moving '../../../../../Documents/Shared-repository/TowerofAngra/Debug/projectlevel/Saved/Room1_Auto6CAF71FDC486B4D9A17CDEF951EFE0D7D.tmp' to '../../../../../Documents/Shared-repository/TowerofAngra/Debug/projectlevel/Saved/Autosaves/Game/TowerofAngra/Maps/Room1_Auto6.umap'
+[2019.05.08-15.57.35:959][467]LogSavePackage: Moving '../../../../../Documents/Shared-repository/TowerofAngra/Debug/projectlevel/Saved/Room3_Auto684B1490C464FD57DB4C33992C480F461.tmp' to '../../../../../Documents/Shared-repository/TowerofAngra/Debug/projectlevel/Saved/Autosaves/Game/TowerofAngra/Maps/Room3_Auto6.umap'
+[2019.05.08-15.57.35:963][467]LogFileHelpers: Editor autosave (incl. sublevels) for '/Game/TowerofAngra/Maps/Stage1' took 1.663
+[2019.05.08-15.57.35:964][467]LogFileHelpers: Editor autosave (incl. sublevels) for all levels took 1.663
+[2019.05.08-15.58.48:496][684]LogHotReload: New module detected: UE4Editor-projectlevel-7090.dll
+[2019.05.08-15.58.50:190][690]LogHotReload: Starting Hot-Reload from IDE
+[2019.05.08-15.58.50:280][690]LogClass: Could not find existing class Chest in package /Script/projectlevel for HotReload, assuming new class
+[2019.05.08-15.58.50:317][690]LogClass: Weapon HotReload.
+[2019.05.08-15.58.50:348][690]LogHotReload: Re-instancing Chest after hot-reload.
+[2019.05.08-15.58.50:547][690]LogHotReload: Re-instancing LevelChanger after hot-reload.
+[2019.05.08-15.58.50:744][690]LogClass: MainPlayerController!
+[2019.05.08-15.58.50:746][690]LogHotReload: Re-instancing PickableItem after hot-reload.
+[2019.05.08-15.58.50:934][690]LogScript: Warning: Script Msg: No world was found for object (/Script/projectlevel.Default__projectlevelGameMode) passed in to UEngine::GetWorldFromContextObject().
+[2019.05.08-15.58.50:939][690]LogContentBrowser: Native class hierarchy updated for 'projectlevel' in 0.0017 seconds. Added 13 classes and 2 folders.
+[2019.05.08-15.58.50:947][690]Display: HotReload successful (6 functions remapped  0 scriptstructs remapped)
+[2019.05.08-15.58.51:414][690]LogContentBrowser: Native class hierarchy populated in 0.0138 seconds. Added 2588 classes and 610 folders.
+[2019.05.08-15.58.51:426][690]Display: HotReload took  1.2s.
+[2019.05.08-15.59.03:367][302]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2019.05.08-15.59.03:546][314]LogEditor: Attempting to add actor of class 'Chest' to level at 2705.00,-1061.00,446.00
+[2019.05.08-15.59.03:870][333]LogEditor: Attempting to add actor of class 'Chest' to level at 1669.00,-1144.00,200.00
+[2019.05.08-15.59.20:881][855]LogHotReload: New module detected: UE4Editor-projectlevel-2721.dll
+[2019.05.08-15.59.22:922][862]LogHotReload: Starting Hot-Reload from IDE
+[2019.05.08-15.59.23:093][862]LogClass: Weapon HotReload.
+[2019.05.08-15.59.23:098][862]LogHotReload: Re-instancing Chest after hot-reload.
+[2019.05.08-15.59.23:378][862]LogHotReload: Re-instancing LevelChanger after hot-reload.
+[2019.05.08-15.59.23:614][862]LogClass: MainPlayerController!
+[2019.05.08-15.59.23:616][862]LogHotReload: Re-instancing PickableItem after hot-reload.
+[2019.05.08-15.59.23:847][862]LogScript: Warning: Script Msg: No world was found for object (/Script/projectlevel.Default__projectlevelGameMode) passed in to UEngine::GetWorldFromContextObject().
+[2019.05.08-15.59.23:852][862]LogContentBrowser: Native class hierarchy updated for 'projectlevel' in 0.0016 seconds. Added 13 classes and 2 folders.
+[2019.05.08-15.59.23:858][862]Display: HotReload successful (6 functions remapped  0 scriptstructs remapped)
+[2019.05.08-15.59.24:353][862]LogContentBrowser: Native class hierarchy populated in 0.0136 seconds. Added 2588 classes and 610 folders.
+[2019.05.08-15.59.24:364][862]Display: HotReload took  1.4s.
+[2019.05.08-15.59.48:168][585]LogHotReload: New module detected: UE4Editor-projectlevel-5780.dll
+[2019.05.08-15.59.49:856][591]LogHotReload: Starting Hot-Reload from IDE
+[2019.05.08-15.59.50:028][591]LogClass: Weapon HotReload.
+[2019.05.08-15.59.50:032][591]LogHotReload: Re-instancing Chest after hot-reload.
+[2019.05.08-15.59.50:298][591]LogHotReload: Re-instancing LevelChanger after hot-reload.
+[2019.05.08-15.59.50:524][591]LogClass: MainPlayerController!
+[2019.05.08-15.59.50:526][591]LogHotReload: Re-instancing PickableItem after hot-reload.
+[2019.05.08-15.59.50:747][591]LogScript: Warning: Script Msg: No world was found for object (/Script/projectlevel.Default__projectlevelGameMode) passed in to UEngine::GetWorldFromContextObject().
+[2019.05.08-15.59.50:752][591]LogContentBrowser: Native class hierarchy updated for 'projectlevel' in 0.0016 seconds. Added 13 classes and 2 folders.
+[2019.05.08-15.59.50:759][591]Display: HotReload successful (6 functions remapped  0 scriptstructs remapped)
+[2019.05.08-15.59.51:252][591]LogContentBrowser: Native class hierarchy populated in 0.0137 seconds. Added 2588 classes and 610 folders.
+[2019.05.08-15.59.51:265][591]Display: HotReload took  1.4s.
+[2019.05.08-15.59.53:454][713]LogEditorViewport: Clicking on Actor (LMB): Chest (Chest4)
+[2019.05.08-15.59.54:111][764]Cmd: DELETE
+[2019.05.08-15.59.54:111][764]Cmd: ACTOR DELETE
+[2019.05.08-15.59.54:147][764]LogEditorActor: Deleted Actor: Chest
+[2019.05.08-15.59.54:239][764]LogEditorActor: Deleted 1 Actors (0.127 secs)
+[2019.05.08-15.59.55:039][834]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2019.05.08-15.59.56:288][943]LogEditor: Attempting to add actor of class 'Chest' to level at 2738.00,-476.00,245.00
+[2019.05.08-15.59.56:431][949]LogEditor: Attempting to add actor of class 'Chest' to level at 2280.00,-373.00,200.00
+[2019.05.08-16.00.17:754][758]Cmd: DELETE
+[2019.05.08-16.00.17:754][758]Cmd: ACTOR DELETE
+[2019.05.08-16.00.17:789][758]LogEditorActor: Deleted Actor: Chest
+[2019.05.08-16.00.17:845][758]LogEditorActor: Deleted 1 Actors (0.091 secs)
+[2019.05.08-16.00.18:645][839]LogSlate: FSceneViewport::OnFocusLost() reason 0
+[2019.05.08-16.00.19:857][848]LogSavePackage: Moving '../../../../../Documents/Shared-repository/TowerofAngra/Debug/projectlevel/Saved/Room1330E4F3642C319C7BBBBE2A254471C05.tmp' to '../../../../../Documents/Shared-repository/TowerofAngra/Debug/projectlevel/Content/TowerofAngra/Maps/Room1.umap'
+[2019.05.08-16.01.08:407][590]LogSavePackage: Moving '../../../../../Documents/Shared-repository/TowerofAngra/Debug/projectlevel/Saved/Room10FED7C504EE5B2549CD133A5B1FECFA6.tmp' to '../../../../../Documents/Shared-repository/TowerofAngra/Debug/projectlevel/Content/TowerofAngra/Maps/Room1.umap'
+[2019.05.08-16.01.11:429][754]LogSlate: Window '콘텐츠 저장' being destroyed
+[2019.05.08-16.01.12:352][754]LogSavePackage: Moving '../../../../../Documents/Shared-repository/TowerofAngra/Debug/projectlevel/Saved/Room37E27655D4ECA0A355F7F4588F6927662.tmp' to '../../../../../Documents/Shared-repository/TowerofAngra/Debug/projectlevel/Content/TowerofAngra/Maps/Room3.umap'
+[2019.05.08-16.01.12:361][754]LogFileHelpers: Saving map 'Room3' took 0.909
