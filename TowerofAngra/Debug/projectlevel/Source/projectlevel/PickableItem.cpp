@@ -62,20 +62,20 @@ void APickableItem::Show(bool lean)
 
 void APickableItem::OnInteract()
 {
-	AprojectlevelCharacter * Character = Cast<AprojectlevelCharacter>(UGameplayStatics::GetPlayerCharacter(this, 0));
 	
-	if (Character)
-	{
-		Show(false);
-		Character->AddToInventory(this);
-	}
+	AprojectlevelCharacter * Character = Cast<AprojectlevelCharacter>(UGameplayStatics::GetPlayerCharacter(this, 0));
+	Show(false);
+	Character->AddToInventory(this);
+	
 }
 
 void APickableItem::OverlapBegins(UPrimitiveComponent * OverlappedComponent, AActor * OtherActor, UPrimitiveComponent * OtherComponent, int32 OtherbodyIdx, bool bFromSweep, const FHitResult & SweepHit)
 {
-	
-	if ((OtherActor != nullptr) && (OtherActor != this) && (OtherComponent != nullptr))
+	AprojectlevelCharacter * Character = Cast<AprojectlevelCharacter>(UGameplayStatics::GetPlayerCharacter(this, 0));
+
+	if ((OtherActor != nullptr) && (OtherActor != this) && (OtherComponent != nullptr) && ((OtherActor == Character)))
 	{
+		
 		GEngine->AddOnScreenDebugMessage(1, 5, FColor::Red, TEXT("Get Item"));
 		OnInteract();
 

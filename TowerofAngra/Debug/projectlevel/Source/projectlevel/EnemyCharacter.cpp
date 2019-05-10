@@ -40,10 +40,7 @@ void AEnemyCharacter::Tick(float DeltaTime)
 		HP -= 1;
 	}
 	}*/
-	if (HP <= 0)
-	{
-		DiedMotion = true;
-	}
+	
 }
 
 // Called to bind functionality to input
