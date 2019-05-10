@@ -18,7 +18,7 @@ ASkillEffect::ASkillEffect()
 	RootComponent = Collision;
 
 	//Skill Effect
-	static ConstructorHelpers::FObjectFinder<UParticleSystem> EffectParticle(TEXT("/Game/VFX_Toolkit_V1/ParticleSystems/356Days/Par_Kaiser_Shot_01"));
+	static ConstructorHelpers::FObjectFinder<UParticleSystem> EffectParticle(TEXT("/Game/StarterContent/Particles/P_Fire.P_Fire"));
 	Effect = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("Effect"));
 	Effect->SetTemplate(EffectParticle.Object);
 	Effect->SetupAttachment(Collision);
