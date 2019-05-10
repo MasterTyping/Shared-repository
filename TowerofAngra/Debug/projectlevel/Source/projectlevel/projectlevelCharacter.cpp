@@ -139,18 +139,18 @@ void AprojectlevelCharacter::BeginPlay()
 	Super::BeginPlay();
 	UWorld* world = GetWorld();
 	////Spawn Actor with Static Class
-	FActorSpawnParameters Sparam;
-	Sparam.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
-	Sparam.Owner = this;
-	MainWeapon = world->SpawnActor<AMainWeapon>(AMainWeapon::StaticClass(), this->GetActorLocation(), FRotator(0, 0, 0), Sparam);
-	const USkeletalMeshSocket* Shoulder = GetMesh()->GetSocketByName("WeaponSlot");
-	Shoulder->AttachActor(MainWeapon, GetMesh());
-	MainWeapon->SetActorRelativeLocation(FVector(0, 0, 0));
+	//FActorSpawnParameters Sparam;
+	//Sparam.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
+	//Sparam.Owner = this;
+	//MainWeapon = world->SpawnActor<AMainWeapon>(AMainWeapon::StaticClass(), this->GetActorLocation(), FRotator(0, 0, 0), Sparam);
+	//const USkeletalMeshSocket* Shoulder = GetMesh()->GetSocketByName("WeaponSlot");
+	//Shoulder->AttachActor(MainWeapon, GetMesh());
+	//MainWeapon->SetActorRelativeLocation(FVector(0, 0, 0));
 
-	//Set State walk Speed
-	GetCharacterMovement()->MaxWalkSpeed = 300;
+	////Set State walk Speed
+	//GetCharacterMovement()->MaxWalkSpeed = 300;
 
-	UIPlayerController = Cast<AUIPlayerController>(GetController());
+	//UIPlayerController = Cast<AUIPlayerController>(GetController());
 
 
 

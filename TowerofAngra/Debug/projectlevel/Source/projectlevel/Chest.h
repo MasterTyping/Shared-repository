@@ -31,4 +31,7 @@ public:
 		class USceneComponent* Root;
 	UPROPERTY(EditAnywhere)
 		class UBoxComponent* CollisionBox;
+
+	void OverlapBegins(UPrimitiveComponent * OverlappedComponent, AActor * OtherActor,
+		UPrimitiveComponent * OtherComponent, int32 OtherbodyIdx, bool bFromSweep, const FHitResult & SweepHit);
 };

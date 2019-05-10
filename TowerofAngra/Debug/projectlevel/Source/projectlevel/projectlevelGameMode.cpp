@@ -11,7 +11,7 @@ AprojectlevelGameMode::AprojectlevelGameMode()
 {
 	LoadFirstLevel = "Stage1";
 	// set default pawn class to our Blueprinted character
-	static ConstructorHelpers::FClassFinder<ACharacter> PlayerPawnBPClass(TEXT("/Game/TowerofAngra/Character/MyprojectlevelCharacter"));
+	static ConstructorHelpers::FClassFinder<ACharacter> PlayerPawnBPClass(TEXT("/Game/TowerofAngra/Character/MagicianCharacter"));
 	if (PlayerPawnBPClass.Class != NULL)
 	{
 		

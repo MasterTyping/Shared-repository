@@ -31,6 +31,7 @@ AChest::AChest()
 	CollisionBox->SetupAttachment(RootComponent);
 	CollisionBox->SetRelativeLocation(FVector(0, 0, 100));
 	CollisionBox->InitBoxExtent(FVector(100, 100, 100));
+	CollisionBox->OnComponentBeginOverlap.AddDynamic(this, &AChest::OverlapBegins);
 
 
 }
@@ -47,5 +48,10 @@ void AChest::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+}
+
+void AChest::OverlapBegins(UPrimitiveComponent * OverlappedComponent, AActor * OtherActor, UPrimitiveComponent * OtherComponent, int32 OtherbodyIdx, bool bFromSweep, const FHitResult & SweepHit)
+{
+	
 }
 
