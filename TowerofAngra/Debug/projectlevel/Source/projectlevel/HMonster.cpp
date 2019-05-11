@@ -2,6 +2,7 @@
 
 #include "HMonster.h"
 #include "HMonsterAIController.h"
+#include "HAnimInstance.h"
 
 // Sets default values
 AHMonster::AHMonster()
@@ -15,6 +16,15 @@ AHMonster::AHMonster()
 	if (SK_CARDBOARD.Succeeded())
 	{
 		GetMesh()->SetSkeletalMesh(SK_CARDBOARD.Object);
+	}
+
+	// Anim
+	GetMesh()->SetAnimationMode(EAnimationMode::AnimationBlueprint);
+
+	static ConstructorHelpers::FClassFinder<UAnimInstance> GOLEM_ANIM(TEXT("/Game/Golem/Animations/GolemAnimBlueprint.GolemAnimBlueprint_C"));
+	if (GOLEM_ANIM.Succeeded())
+	{
+		GetMesh()->SetAnimInstanceClass(GOLEM_ANIM.Class);
 	}
 	AIControllerClass = AHMonsterAIController::StaticClass();
 	AutoPossessAI = EAutoPossessAI::PlacedInWorldOrSpawned;
