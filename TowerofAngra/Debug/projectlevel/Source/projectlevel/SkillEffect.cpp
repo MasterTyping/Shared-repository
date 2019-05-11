@@ -15,26 +15,28 @@ ASkillEffect::ASkillEffect()
 	//Setup collision volume & Attach Root Component
 	Collision = CreateDefaultSubobject<USphereComponent>(TEXT("Collision"));
 	Collision->InitSphereRadius(25.0f);
+	Collision->OnComponentBeginOverlap.AddDynamic(this, &ASkillEffect::OverlapBegins);
+	//Collision->collision
 	RootComponent = Collision;
 
 	//Skill Effect
-	static ConstructorHelpers::FObjectFinder<UParticleSystem> EffectParticle(TEXT("/Game/StarterContent/Particles/P_Fire.P_Fire"));
+	static ConstructorHelpers::FObjectFinder<UParticleSystem> EffectParticle(TEXT("/Game/VFX_Toolkit_V1/ParticleSystems/356Days/Par_MissileTrails"));
 	Effect = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("Effect"));
 	Effect->SetTemplate(EffectParticle.Object);
 	Effect->SetupAttachment(Collision);
-	Effect->SetWorldRotation(FRotator(0, -90, 0), false, NULL, ETeleportType::None);
+	Effect->SetWorldRotation(FRotator(0, 0, 0), false, NULL, ETeleportType::None);
 	Effect->SetWorldScale3D(FVector(0.3, 0.3, 0.3));
 	//Setup Projectile Setting
 	ProjectileMovementComponent = CreateDefaultSubobject<UProjectileMovementComponent>(TEXT("ProjectileMovementComponent"));
 	ProjectileMovementComponent->SetUpdatedComponent(Collision);
-	ProjectileMovementComponent->InitialSpeed = 1000.0f;
-	ProjectileMovementComponent->MaxSpeed = 3000.0f;
+	ProjectileMovementComponent->InitialSpeed = 100.0f;
+	ProjectileMovementComponent->MaxSpeed = 150.0f;
 	ProjectileMovementComponent->bRotationFollowsVelocity = true;
 	ProjectileMovementComponent->bShouldBounce = true;
 	ProjectileMovementComponent->Bounciness = 0.3f;
 	ProjectileMovementComponent->ProjectileGravityScale = 0.0f;
 
-
+	
 	//ProjectileMovementComponent = RootComponent;
 }
 
@@ -47,7 +49,7 @@ void ASkillEffect::BeginPlay()
 
 void ASkillEffect::FireInDirection(const FVector & ShootDirection)
 {
-	ProjectileMovementComponent->Velocity = ShootDirection * ProjectileMovementComponent->InitialSpeed;
+	ProjectileMovementComponent->Velocity = (ShootDirection) * ProjectileMovementComponent->InitialSpeed;
 	
 }
 
@@ -55,6 +57,14 @@ void ASkillEffect::FireInDirection(const FVector & ShootDirection)
 void ASkillEffect::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+	GEngine->AddOnScreenDebugMessage(1, 5, FColor::Red, ProjectileMovementComponent->Velocity.ToString());
+}
 
+void ASkillEffect::OverlapBegins(UPrimitiveComponent * OverlappedComponent, AActor * OtherActor, UPrimitiveComponent * OtherComponent, int32 OtherbodyIdx, bool bFromSweep, const FHitResult & SweepHit)
+{
+	if ((OtherActor != nullptr) && (OtherActor != this) && (OtherComponent != nullptr))
+	{
+		GEngine->AddOnScreenDebugMessage(1, 5, FColor::Red, TEXT("Collision"));
+	}
 }
 

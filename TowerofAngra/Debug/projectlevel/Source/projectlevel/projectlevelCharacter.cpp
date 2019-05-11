@@ -71,11 +71,7 @@ AprojectlevelCharacter::AprojectlevelCharacter()
 
 
 
-	//Skill Effect
-	static ConstructorHelpers::FObjectFinder<UParticleSystem> EffectParticle(TEXT("/Game/StarterContent/Particles/P_Fire"));
-	Effect = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("Effect"));
-	Effect->SetTemplate(EffectParticle.Object);
-	Effect->SetupAttachment(GetMesh());
+	
 
 	// Note: The skeletal mesh and anim blueprint references on the Mesh component (inherited from Character) 
 	// are set in the derived blueprint asset named MyCharacter (to avoid direct content references in C++)
@@ -104,9 +100,10 @@ void AprojectlevelCharacter::SetupPlayerInputComponent(class UInputComponent* Pl
 {
 	// Set up gameplay key bindings
 	check(PlayerInputComponent);
+	/*
 	PlayerInputComponent->BindAction("Jump", IE_Pressed, this, &ACharacter::Jump);
 	PlayerInputComponent->BindAction("Jump", IE_Released, this, &ACharacter::StopJumping);
-
+	*/
 	//Custom Action Key
 	PlayerInputComponent->BindAction("Attack", IE_Pressed, this, &AprojectlevelCharacter::Attack);
 	PlayerInputComponent->BindAction("Skill", IE_Pressed, this, &AprojectlevelCharacter::Skill);
@@ -160,25 +157,25 @@ void AprojectlevelCharacter::BeginPlay()
 void AprojectlevelCharacter::ToggleSkill()
 {
 	
-	////Get Socket from Skeletal Mesh in Main Character
-	const USkeletalMeshSocket* Lefthand = GetMesh()->GetSocketByName("WeaponSocket");
-	const USkeletalMeshSocket* Shoulder = GetMesh()->GetSocketByName("WeaponSlot");
+	//////Get Socket from Skeletal Mesh in Main Character
+	//const USkeletalMeshSocket* Lefthand = GetMesh()->GetSocketByName("WeaponSocket");
+	//const USkeletalMeshSocket* Shoulder = GetMesh()->GetSocketByName("WeaponSlot");
 
-	////Main Weapon Attach to Main Character's Right hand & Set Position 
-	if (MainWeapon->GetAttachParentSocketName().Compare("WeaponSocket") != 0)
-	{
-		Lefthand->AttachActor(MainWeapon, GetMesh());
-		MainWeapon->SetActorRelativeRotation(FRotator(0, 0, 0));
-		MainWeapon->SetActorRelativeLocation(FVector(0, 0, 0));
+	//////Main Weapon Attach to Main Character's Right hand & Set Position 
+	//if (MainWeapon->GetAttachParentSocketName().Compare("WeaponSocket") != 0)
+	//{
+	//	Lefthand->AttachActor(MainWeapon, GetMesh());
+	//	MainWeapon->SetActorRelativeRotation(FRotator(0, 0, 0));
+	//	MainWeapon->SetActorRelativeLocation(FVector(0, 0, 0));
 
-	}
-	else if (MainWeapon->GetAttachParentSocketName().Compare("WeaponSlot") != 0)
-	{
-		Shoulder->AttachActor(MainWeapon, GetMesh());
-		MainWeapon->SetActorRelativeLocation(FVector(0, 0, 0));
-		MainWeapon->SetActorRelativeRotation(FRotator(0, 0, 0));
-	}
-	
+	//}
+	//else if (MainWeapon->GetAttachParentSocketName().Compare("WeaponSlot") != 0)
+	//{
+	//	Shoulder->AttachActor(MainWeapon, GetMesh());
+	//	MainWeapon->SetActorRelativeLocation(FVector(0, 0, 0));
+	//	MainWeapon->SetActorRelativeRotation(FRotator(0, 0, 0));
+	//}
+	//
 	
 }
 
@@ -190,36 +187,41 @@ void AprojectlevelCharacter::Attack()
 
 void AprojectlevelCharacter::Skill()
 {
-	if (SkillEffect)
-	{
-		GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Blue, TEXT("Skill."));
-		
-		// 카메라 트랜스폼을 구합니다.
-		FVector CameraLocation;
-		FRotator CameraRotation;
-		GetActorEyesViewPoint(CameraLocation, CameraRotation);
 
-		// Offset 을 카메라 스페이스에서 월드 스페이스로 변환합니다.
-		FVector SkillLocation = CameraLocation + FTransform(CameraRotation).TransformVector(SkillOffset);
-		FRotator SkillRotation = CameraRotation;
-		// 조준을 약간 윗쪽으로 올려줍니다.
-		SkillRotation.Pitch += 10.0f;
-		UWorld* World = GetWorld();
-		if (World)
-		{
-			FActorSpawnParameters SpawnParams;
-			SpawnParams.Owner = this;
-			SpawnParams.Instigator = Instigator;
-			// 총구 위치에 발사체를 스폰시킵니다.
-			ASkillEffect* Projectile = World->SpawnActor<ASkillEffect>(SkillEffect, SkillLocation, SkillRotation, SpawnParams);
-			if (Projectile)
-			{
-				// 발사 방향을 알아냅니다.
-				FVector LaunchDirection = SkillRotation.Vector();
-				Projectile->FireInDirection(LaunchDirection);
-			}
-		}			
-	}
+
+	//if (SkillEffect)
+	//{
+	//	GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Blue, TEXT("Skill."));
+	//	
+	//	// 카메라 트랜스폼을 구합니다.
+	//	FVector CameraLocation;
+	//	FRotator CameraRotation;
+	//	GetActorEyesViewPoint(CameraLocation, CameraRotation);
+
+	//	// Offset 을 카메라 스페이스에서 월드 스페이스로 변환합니다.
+	//	FVector SkillLocation = CameraLocation + FTransform(CameraRotation).TransformVector(SkillOffset);
+	//	FRotator SkillRotation = CameraRotation;
+	//	// 조준을 약간 윗쪽으로 올려줍니다.
+	//	SkillRotation.Pitch += 5.0f;
+	//	UWorld* World = GetWorld();
+	//	if (World)
+	//	{
+	//		FActorSpawnParameters SpawnParams;
+	//		SpawnParams.Owner = this;
+	//		SpawnParams.Instigator = Instigator;
+	//		// 총구 위치에 발사체를 스폰시킵니다.
+	//		ASkillEffect* Projectile = World->SpawnActor<ASkillEffect>(SkillEffect, SkillLocation, SkillRotation, SpawnParams);			
+	//		for (int i = 0; i < 20; i++)
+	//		{
+	//			if (Projectile)
+	//			{
+	//				// 발사 방향을 알아냅니다.
+	//				FVector LaunchDirection = SkillRotation.Vector() + FVector( 20 * i,0,0);
+	//				Projectile->FireInDirection(LaunchDirection);
+	//			}
+	//		}
+	//	}			
+	//}
 }
 	
 

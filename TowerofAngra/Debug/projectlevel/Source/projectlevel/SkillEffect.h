@@ -14,7 +14,8 @@ class PROJECTLEVEL_API ASkillEffect : public AActor
 public:	
 	// Sets default values for this actor's properties
 	ASkillEffect();
-	void FireInDirection(const FVector& ShootDirection);
+	UFUNCTION(BlueprintCallable)
+		void FireInDirection(const FVector& ShootDirection);
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
@@ -30,4 +31,7 @@ public:
 	
 	UPROPERTY(VisibleAnywhere, Category = Movement)
 	class UProjectileMovementComponent* ProjectileMovementComponent;
+	UFUNCTION()
+	void OverlapBegins(UPrimitiveComponent * OverlappedComponent, AActor * OtherActor,
+		UPrimitiveComponent * OtherComponent, int32 OtherbodyIdx, bool bFromSweep, const FHitResult & SweepHit);
 };

@@ -4,6 +4,9 @@
 #include "Components/StaticMeshComponent.h"
 #include "ConstructorHelpers.h"
 #include "Components/BoxComponent.h"
+#include "Kismet/GameplayStatics.h"
+#include "projectlevelCharacter.h"
+#include "Engine.h"
 // Sets default values
 AChest::AChest()
 {
@@ -30,8 +33,10 @@ AChest::AChest()
 	CollisionBox = CreateDefaultSubobject<UBoxComponent>(TEXT("Collision"));
 	CollisionBox->SetupAttachment(RootComponent);
 	CollisionBox->SetRelativeLocation(FVector(0, 0, 100));
-	CollisionBox->InitBoxExtent(FVector(100, 100, 100));
+	CollisionBox->InitBoxExtent(FVector(200, 200, 100));
 	CollisionBox->OnComponentBeginOverlap.AddDynamic(this, &AChest::OverlapBegins);
+	CollisionBox->OnComponentEndOverlap.AddDynamic(this, &AChest::OnOverlapEnd);
+	//Open = false;
 
 
 }
@@ -47,11 +52,30 @@ void AChest::BeginPlay()
 void AChest::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
+	
 }
 
 void AChest::OverlapBegins(UPrimitiveComponent * OverlappedComponent, AActor * OtherActor, UPrimitiveComponent * OtherComponent, int32 OtherbodyIdx, bool bFromSweep, const FHitResult & SweepHit)
 {
-	
+	ACharacter * Character = Cast<ACharacter>(UGameplayStatics::GetPlayerCharacter(this, 0));
+
+	if ((OtherActor == Character) && (OtherActor != this) && (OtherComponent != nullptr) )
+	{
+
+		GEngine->AddOnScreenDebugMessage(1, 5, FColor::Blue, TEXT("Open Chest!"));
+
+		Open = true;
+	}
+}
+
+void AChest::OnOverlapEnd(UPrimitiveComponent * OverlappedComp, AActor * OtherActor, UPrimitiveComponent * OtherComp, int32 OtherBodyIndex)
+{
+	ACharacter* Character = Cast<ACharacter>(UGameplayStatics::GetPlayerCharacter(this, 0));
+	if ((OtherActor == Character) && (OtherActor != this) && (OtherComp != nullptr))
+	{
+		GEngine->AddOnScreenDebugMessage(1, 5, FColor::Blue, TEXT("Close Chest!"));
+		Open = false;
+	}
+
 }
 

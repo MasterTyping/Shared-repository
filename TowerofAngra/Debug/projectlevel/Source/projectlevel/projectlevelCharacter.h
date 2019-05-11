@@ -108,6 +108,7 @@ public:
 	/** Returns FollowCamera subobject **/
 	FORCEINLINE class UCameraComponent* GetFollowCamera() const { return FollowCamera; }	
 
+	
 private:
 	UPROPERTY()
 	class AUIPlayerController* UIPlayerController;
@@ -122,8 +123,6 @@ public:
 	UPROPERTY(EditAnywhere, Category = "Spawning")
 		TSubclassOf<ACharacter> WhoToSpawn;
 	
-	UPROPERTY(EditAnywhere, Category = "particle")
-		class UParticleSystemComponent* Effect;
 
 };
 
