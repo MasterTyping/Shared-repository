@@ -16,7 +16,7 @@ class PROJECTLEVEL_API UHAnimInstance : public UAnimInstance
 	
 public:
 	UHAnimInstance();
-	
+	virtual void NativeUpdateAnimation(float DeltaSeconds) override;
 private:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Pawn, Meta = (AllowPrivateAccess = true))
 	float CurrentPawnSpeed;
