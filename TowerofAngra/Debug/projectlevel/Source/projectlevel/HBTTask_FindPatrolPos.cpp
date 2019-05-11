@@ -3,7 +3,8 @@
 #include "HBTTask_FindPatrolPos.h"
 #include "HMonsterAIController.h"
 #include "BehaviorTree/BlackboardComponent.h"
-#include "NavigationSystem.h"
+#include "Runtime/Engine/Classes/AI/NavigationSystemBase.h"
+#include "Runtime/NavigationSystem/Public/NavigationSystem.h"
 
 
 UHBTTask_FindPatrolPos::UHBTTask_FindPatrolPos()
