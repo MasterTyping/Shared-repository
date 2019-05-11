@@ -52,7 +52,12 @@ void AChest::BeginPlay()
 void AChest::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	
+	if (Open && head->RelativeRotation.Roll>-130)
+	{
+		head->AddRelativeRotation(FRotator(0, 0, -1));
+		GEngine->AddOnScreenDebugMessage(1, 5, FColor::Blue,FString::Printf(TEXT("Chest head angle : %f"), head->RelativeRotation.Roll));
+	}
+
 }
 
 void AChest::OverlapBegins(UPrimitiveComponent * OverlappedComponent, AActor * OtherActor, UPrimitiveComponent * OtherComponent, int32 OtherbodyIdx, bool bFromSweep, const FHitResult & SweepHit)
