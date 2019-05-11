@@ -35,7 +35,7 @@ AChest::AChest()
 	CollisionBox->SetRelativeLocation(FVector(0, 0, 100));
 	CollisionBox->InitBoxExtent(FVector(200, 200, 100));
 	CollisionBox->OnComponentBeginOverlap.AddDynamic(this, &AChest::OverlapBegins);
-	CollisionBox->OnComponentEndOverlap.AddDynamic(this, &AChest::OnOverlapEnd);
+	/*CollisionBox->OnComponentEndOverlap.AddDynamic(this, &AChest::OnOverlapEnd);*/
 	//Open = false;
 
 
