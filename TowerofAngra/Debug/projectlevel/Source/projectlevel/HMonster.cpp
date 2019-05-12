@@ -41,7 +41,7 @@ void AHMonster::BeginPlay()
 void AHMonster::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
+	GetCharacterMovement()->MaxWalkSpeed = 100.f;
 }
 
 // Called to bind functionality to input
