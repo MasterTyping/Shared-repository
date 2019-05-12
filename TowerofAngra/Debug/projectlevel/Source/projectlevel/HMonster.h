@@ -6,6 +6,8 @@
 #include "GameFramework/Character.h"
 #include "HMonster.generated.h"
 
+DECLARE_MULTICAST_DELEGATE(FOnAttackEndDelegate);
+
 UCLASS()
 class PROJECTLEVEL_API AHMonster : public ACharacter
 {
@@ -26,6 +28,10 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
-	
+	UPROPERTY(VisibleAnywhere, Category = UI)
+	class UWidgetComponent* HPBarWidget;
+
+	void Attack();
+	FOnAttackEndDelegate OnAttackEnd;
 	
 };

@@ -3,6 +3,7 @@
 #include "HMonster.h"
 #include "HMonsterAIController.h"
 #include "HAnimInstance.h"
+#include "Components/WidgetComponent.h"
 
 // Sets default values
 AHMonster::AHMonster()
@@ -26,6 +27,20 @@ AHMonster::AHMonster()
 	{
 		GetMesh()->SetAnimInstanceClass(GOLEM_ANIM.Class);
 	}
+
+	// UI
+	HPBarWidget = CreateDefaultSubobject<UWidgetComponent>(TEXT("HPBARWIDGET"));
+	HPBarWidget->SetupAttachment(GetMesh());
+
+	HPBarWidget->SetRelativeLocation(FVector(0.f, 0.f, 300.f));
+	HPBarWidget->SetWidgetSpace(EWidgetSpace::Screen);
+	static ConstructorHelpers::FClassFinder<UUserWidget> UI_HUD(TEXT("/Game/TowerofAngra/UI/UI_HPBar.UI_HPBar_C"));
+	if (UI_HUD.Succeeded())
+	{
+		HPBarWidget->SetWidgetClass(UI_HUD.Class);
+		HPBarWidget->SetDrawSize(FVector2D(150.f, 50.f));
+	}
+
 	AIControllerClass = AHMonsterAIController::StaticClass();
 	AutoPossessAI = EAutoPossessAI::PlacedInWorldOrSpawned;
 }
@@ -49,5 +64,9 @@ void AHMonster::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
+}
+
+void AHMonster::Attack()
+{
 }
 
