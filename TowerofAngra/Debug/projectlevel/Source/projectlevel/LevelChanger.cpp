@@ -38,6 +38,7 @@ void ALevelChanger::OverlapBegins(UPrimitiveComponent * OverlappedComponent, AAc
 	if (OtherActor == MyChar && LoadLevelName != "")
 	{
 		FLatentActionInfo ActionInfo;
+
 		UGameplayStatics::LoadStreamLevel(this, LoadLevelName, true, true, ActionInfo);
 		//UGameplayStatics::UnloadStreamLevel(this, UnLoadLevelName, ActionInfo, true);
 		MileStone->SetWorldScale3D(FVector(0, 0, 0));
