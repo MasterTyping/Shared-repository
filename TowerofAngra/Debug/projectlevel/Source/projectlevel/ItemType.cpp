@@ -1,0 +1,11 @@
+// Fill out your copyright notice in the Description page of Project Settings.
+
+#include "ItemType.h"
+
+ItemType::ItemType()
+{
+}
+
+ItemType::~ItemType()
+{
+}

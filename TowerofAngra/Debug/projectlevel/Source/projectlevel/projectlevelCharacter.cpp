@@ -14,7 +14,7 @@
 #include "SkillEffect.h"
 #include "PickableItem.h"
 #include "UIPlayerController.h"
-#include "HUDWidget.h"
+
 #include "Particles/ParticleSystemComponent.h"
 
 #include "server.h"

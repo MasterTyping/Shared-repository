@@ -12,7 +12,7 @@ AMainWeapon::AMainWeapon()
 
 	Mesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("MainWeapon"));
 	//Set weapon location Attach to Socket 	
-	static ConstructorHelpers::FObjectFinder<UStaticMesh> MainWeaponMesh(TEXT("/Game/TowerofAngra/Weapon/side/StaticMesh_side.StaticMesh_side"));
+	static ConstructorHelpers::FObjectFinder<UStaticMesh> MainWeaponMesh(TEXT("/Game/TowerofAngra/Weapon/side/Side_mesh"));
 	//Mesh->SetStaticMesh(MainWeaponMesh.Object->GetStaticMesh());
 	RootComponent = Mesh;
 	Mesh->SetStaticMesh(MainWeaponMesh.Object);
