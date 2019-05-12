@@ -154,6 +154,7 @@ void AprojectlevelCharacter::BeginPlay()
 
 }
 
+
 void AprojectlevelCharacter::ToggleSkill()
 {
 	
@@ -258,6 +259,7 @@ void AprojectlevelCharacter::OpenInventory()
 	OnUpdateInventory.Broadcast(Inventory);
 
 }
+
 
 
 

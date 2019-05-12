@@ -12,7 +12,7 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FUpadateInventoryDelegate, const TAr
 UENUM(BlueprintType)
 enum class ESKillTypeEnum : uint8
 {
-	TYPE_SKILL1 	UMETA(DisplayName = "SKILL1"),
+	TYPE_SKILL1 		UMETA(DisplayName = "SKILL1"),
 	TYPE_SKILL2		UMETA(DisplayName = "SKILL2"),
 	TYPE_SKILL3		UMETA(DisplayName = "SKILL3"),
 	TYPE_SKILL4		UMETA(DisplayName = "SKILL4")
@@ -36,7 +36,7 @@ class AprojectlevelCharacter : public ACharacter
 
 public:
 	AprojectlevelCharacter();
-	UPROPERTY(VisibleAnywhere)
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = Skill)
 		ESKillTypeEnum SkillType;
 
 	/** Base turn rate, in deg/sec. Other scaling may affect final turn rate. */
@@ -90,6 +90,8 @@ protected:
 	//Open Inventory
 	UFUNCTION(BlueprintCallable)
 	void OpenInventory();
+	//Get 
+
 
 	//Send Item infomation to UI_itemslot
 	UPROPERTY(BlueprintAssignable, Category = Pickup)
@@ -137,4 +139,5 @@ public:
 	
 
 };
+
 
