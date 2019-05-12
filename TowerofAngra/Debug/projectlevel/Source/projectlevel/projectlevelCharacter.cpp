@@ -188,8 +188,43 @@ void AprojectlevelCharacter::Attack()
 
 void AprojectlevelCharacter::Skill()
 {
+	
+
+	
+	UWorld* World = GetWorld();
+
+	if (SkillType == ESKillTypeEnum::TYPE_SKILL1)
+	{
+		GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Blue, TEXT("Skill 1."));
+		
+		if (World)
+		{
+			FActorSpawnParameters SpawnParams;
+			SpawnParams.Owner = this;
+			SpawnParams.Instigator = Instigator;
+			FRotator SkillRotation = GetActorRotation();
 
 
+			// 총구 위치에 발사체를 스폰시킵니다.
+			for (int i = -20; i < 20; i++)
+			{
+				SkillRotation += FRotator(0, i*20, 0);
+				FVector Offset = SkillRotation.Vector();
+				ASkillEffect* Projectile = World->SpawnActor<ASkillEffect>(SkillEffect, GetActorLocation()+Offset,SkillRotation, SpawnParams);
+				if (Projectile)
+				{
+					// 발사 방향을 알아냅니다.
+					FVector LaunchDirection = SkillRotation.Vector();
+					Projectile->FireInDirection(LaunchDirection);
+				}
+			}
+		}
+	}
+
+	if (SkillType == ESKillTypeEnum::TYPE_SKILL2)
+	{
+
+	}
 	//if (SkillEffect)
 	//{
 	//	GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Blue, TEXT("Skill."));

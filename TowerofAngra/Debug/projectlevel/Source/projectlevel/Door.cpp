@@ -63,9 +63,9 @@ void ADoor::Tick(float DeltaTime)
 
 void ADoor::OverlapBegins(UPrimitiveComponent * OverlappedComponent, AActor * OtherActor, UPrimitiveComponent * OtherComponent, int32 OtherbodyIdx, bool bFromSweep, const FHitResult & SweepHit)
 {
-	if ((OtherActor != nullptr) && (OtherActor != this) && (OtherComponent != nullptr))
+	AprojectlevelCharacter * Character = Cast<AprojectlevelCharacter>(UGameplayStatics::GetPlayerCharacter(this, 0));
+	if ((OtherActor != nullptr) && (OtherActor != this) && (OtherComponent != nullptr) && (OtherActor == Character))
 	{
-		AprojectlevelCharacter * Character = Cast<AprojectlevelCharacter>(UGameplayStatics::GetPlayerCharacter(this, 0));
 		
 		if (Character)
 		{
