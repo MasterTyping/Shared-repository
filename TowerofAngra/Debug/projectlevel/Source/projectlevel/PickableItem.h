@@ -6,6 +6,14 @@
 #include "GameFramework/Actor.h"
 #include "PickableItem.generated.h"
 
+UENUM(BlueprintType)
+enum class EItemTypeEnum : uint8
+{
+	TYPE_UPGRADE 	UMETA(DisplayName = "upgrade"),
+	TYPE_EAT		UMETA(DisplayName = "eat"),
+	TYPE_QUEST		UMETA(DisplayName = "quest"),
+	TYPE_MONEY		UMETA(DisplayName = "Money")
+};
 UCLASS()
 class PROJECTLEVEL_API APickableItem : public AActor
 {
@@ -26,6 +34,8 @@ public:
 	
 	void Show(bool lean);
 	void OnInteract();
+	UPROPERTY(EditAnywhere)
+		EItemTypeEnum ItemType;
 	UPROPERTY(EditAnywhere)
 		class USceneComponent* SceneComponent;
 	UPROPERTY(EditAnywhere)

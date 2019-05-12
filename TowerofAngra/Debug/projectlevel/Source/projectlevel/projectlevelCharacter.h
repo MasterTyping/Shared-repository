@@ -6,7 +6,17 @@
 #include "GameFramework/Character.h"
 #include "projectlevelCharacter.generated.h"
 
+
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FUpadateInventoryDelegate, const TArray<class APickableItem*>&, UI_itemslot);
+
+UENUM(BlueprintType)
+enum class ESKillTypeEnum : uint8
+{
+	TYPE_SKILL1 	UMETA(DisplayName = "SKILL1"),
+	TYPE_SKILL2		UMETA(DisplayName = "SKILL2"),
+	TYPE_SKILL3		UMETA(DisplayName = "SKILL3"),
+	TYPE_SKILL4		UMETA(DisplayName = "SKILL4")
+};
 
 UCLASS(config=Game)
 class AprojectlevelCharacter : public ACharacter
@@ -26,6 +36,8 @@ class AprojectlevelCharacter : public ACharacter
 
 public:
 	AprojectlevelCharacter();
+	UPROPERTY(VisibleAnywhere)
+		ESKillTypeEnum SkillType;
 
 	/** Base turn rate, in deg/sec. Other scaling may affect final turn rate. */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category=Camera)
