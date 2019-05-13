@@ -183,7 +183,37 @@ void AprojectlevelCharacter::ToggleSkill()
 void AprojectlevelCharacter::Attack()
 {
 	
-	GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Blue,  GetActorLocation().ToString());
+	GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Blue, TEXT("ATTack"));
+	// 카메라 트랜스폼을 구합니다.
+	FVector CameraLocation;
+	FRotator CameraRotation;
+	GetActorEyesViewPoint(CameraLocation, CameraRotation);
+
+	// Offset 을 카메라 스페이스에서 월드 스페이스로 변환합니다.
+	FVector SkillLocation = CameraLocation + FTransform(CameraRotation).TransformVector(SkillOffset);
+	FRotator SkillRotation = CameraRotation;
+	// 조준을 약간 윗쪽으로 올려줍니다.
+	SkillRotation.Pitch += 15.0f;
+	UWorld* World = GetWorld();
+	if (World)
+	{
+		FActorSpawnParameters SpawnParams;
+		SpawnParams.Owner = this;
+		SpawnParams.Instigator = Instigator;
+		// 총구 위치에 발사체를 스폰시킵니다.
+		ASkillEffect* Projectile = World->SpawnActor<ASkillEffect>(SkillEffect, SkillLocation, SkillRotation, SpawnParams);
+		for (int i = 0; i < 20; i++)
+		{
+			if (Projectile)
+			{
+				// 발사 방향을 알아냅니다.
+				FVector LaunchDirection = SkillRotation.Vector();
+				Projectile->FireInDirection(LaunchDirection);
+			}
+		}
+	}
+
+	
 }
 
 void AprojectlevelCharacter::Skill()

@@ -8,6 +8,7 @@
 #include "BoomEffect.h"
 #include "Engine/World.h"
 #include "projectlevelCharacter.h"
+#include "EnemyCharacter.h"
 #include "Kismet/GameplayStatics.h"
 // Sets default values
 ASkillEffect::ASkillEffect()
@@ -48,6 +49,7 @@ ASkillEffect::ASkillEffect()
 void ASkillEffect::BeginPlay()
 {
 	Super::BeginPlay();
+
 	
 }
 
@@ -67,6 +69,7 @@ void ASkillEffect::Tick(float DeltaTime)
 void ASkillEffect::OverlapBegins(UPrimitiveComponent * OverlappedComponent, AActor * OtherActor, UPrimitiveComponent * OtherComponent, int32 OtherbodyIdx, bool bFromSweep, const FHitResult & SweepHit)
 {
 	AprojectlevelCharacter *Char = Cast<AprojectlevelCharacter>(UGameplayStatics::GetPlayerCharacter(this, 0));
+	AEnemyCharacter *Enemy = Cast<AEnemyCharacter>(OtherActor);
 	if ((OtherActor != nullptr) && (OtherActor != this) && (OtherComponent != nullptr) && (OtherActor != Char))
 	{
 		GEngine->AddOnScreenDebugMessage(1, 5, FColor::Red, GetActorLocation().ToString());
@@ -76,6 +79,19 @@ void ASkillEffect::OverlapBegins(UPrimitiveComponent * OverlappedComponent, AAct
 		SpawnParams.Owner = this;
 		SpawnParams.Instigator = Instigator;
 		ABoomEffect* Projectile = World->SpawnActor<ABoomEffect>(ABoomEffect::StaticClass(), GetActorLocation(), GetActorRotation(), SpawnParams);*/
+	}
+	if(Enemy)
+	{
+		GEngine->AddOnScreenDebugMessage(1, 5, FColor::Red, GetActorLocation().ToString());
+		UWorld* World = GetWorld();
+		FActorSpawnParameters SpawnParams;
+		SpawnParams.Owner = this;
+		SpawnParams.Instigator = Instigator;
+		
+		
+		
+		ABoomEffect* Projectile = World->SpawnActor<ABoomEffect>(ABoomEffect::StaticClass(), GetActorLocation(), GetActorRotation(), SpawnParams);
+		Destroy();
 	}
 }
 

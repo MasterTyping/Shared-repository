@@ -71,24 +71,24 @@ void AEnemyCharacter::OverlapBegins(UPrimitiveComponent * OverlappedComponent, A
 	if ((OtherActor != nullptr) && (OtherActor != this) && (OtherComponent != nullptr))
 	{
 		AprojectlevelCharacter* MyChar = Cast<AprojectlevelCharacter>(UGameplayStatics::GetPlayerCharacter(this, 0));
-		TArray<AActor*> FoundActors;
-		UGameplayStatics::GetAllActorsOfClass(GetWorld(), ASkillEffect::StaticClass(), FoundActors);
+		/*TArray<AActor*> FoundActors;
+		UGameplayStatics::GetAllActorsOfClass(GetWorld(), ASkillEffect::StaticClass(), FoundActors);*/
 		/*if (MyChar)
 		{
 			GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, TEXT("On Agro"));
 			HandAttack = true;
 		}*/
-		for (int i = 0; i < FoundActors.Num(); i++)
-		{
-			if (FoundActors[i])
-			{
-				GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, TEXT("Attacked"));
-				HP = 0;
-				FoundActors[i]->Destroy();
-				//AgroArea->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+		//for (int i = 0; i < FoundActors.Num(); i++)
+		//{
+		//	if (FoundActors[i])
+		//	{
+		//		GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Red, TEXT("Attacked"));
+		//		HP = 0;
+		//		FoundActors[i]->Destroy();
+		//		//AgroArea->SetCollisionEnabled(ECollisionEnabled::NoCollision);
 
-			}
-		}
+		//	}
+		//}
 		
 	}
 }
