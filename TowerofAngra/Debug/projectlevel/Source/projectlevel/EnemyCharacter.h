@@ -44,7 +44,7 @@ public:
 		void OnOverlapEnd(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, 
 			UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);*/
 
-
+	void Died();
 
 	UPROPERTY(VisibleAnywhere, Category = UI)
 	class UWidgetComponent* HPBarWidget;

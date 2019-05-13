@@ -21,6 +21,9 @@ protected:
 	virtual void BeginPlay() override;
 	
 public:	
+
+	FTimerHandle DTimerhandle;
+	void EndLifeTime();
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 	UPROPERTY(EditAnywhere)

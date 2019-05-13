@@ -10,6 +10,7 @@
 #include "projectlevelCharacter.h"
 #include "EnemyCharacter.h"
 #include "Kismet/GameplayStatics.h"
+#include "TimerManager.h"
 // Sets default values
 ASkillEffect::ASkillEffect()
 {
@@ -49,7 +50,7 @@ ASkillEffect::ASkillEffect()
 void ASkillEffect::BeginPlay()
 {
 	Super::BeginPlay();
-
+	GetWorldTimerManager().SetTimer(DTimerhandle, this, &ASkillEffect::EndLifeTime, 3.0f, false, 5.f);
 	
 }
 
@@ -57,6 +58,11 @@ void ASkillEffect::FireInDirection(const FVector & ShootDirection)
 {
 	ProjectileMovementComponent->Velocity = (ShootDirection) * ProjectileMovementComponent->InitialSpeed;
 	GEngine->AddOnScreenDebugMessage(1, 5, FColor::Red, ProjectileMovementComponent->Velocity.ToString());
+}
+
+void ASkillEffect::EndLifeTime()
+{
+	Destroy();
 }
 
 // Called every frame
@@ -82,6 +88,7 @@ void ASkillEffect::OverlapBegins(UPrimitiveComponent * OverlappedComponent, AAct
 	}
 	if(Enemy)
 	{
+		Enemy->HP = 0;
 		GEngine->AddOnScreenDebugMessage(1, 5, FColor::Red, GetActorLocation().ToString());
 		UWorld* World = GetWorld();
 		FActorSpawnParameters SpawnParams;

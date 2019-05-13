@@ -49,7 +49,10 @@ void AEnemyCharacter::BeginPlay()
 void AEnemyCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+	if (HP <= 0)
+		Died();
 	/*AprojectlevelCharacter* MainChar = Cast<AprojectlevelCharacter>(UGameplayStatics::GetPlayerCharacter(this, 0));
+
 	if (MainChar->IsOverlappingActor(this))
 	{
 		HP -= 1;
@@ -91,6 +94,17 @@ void AEnemyCharacter::OverlapBegins(UPrimitiveComponent * OverlappedComponent, A
 		//}
 		
 	}
+}
+
+void AEnemyCharacter::Died()
+{
+
+	FLatentActionInfo ActionInfo;
+
+	UGameplayStatics::LoadStreamLevel(this, TEXT("Room5"), true, true, ActionInfo);
+	GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Magenta, TEXT("Open the Chest Room"));
+	Destroy();
+	
 }
 
 //void AEnemyCharacter::OnOverlapEnd(UPrimitiveComponent * OverlappedComp, AActor * OtherActor,
