@@ -43,7 +43,7 @@ void UHBTService_Detect::TickNode(UBehaviorTreeComponent & OwnerComp, uint8 * No
 		{
 			AprojectlevelCharacter* APlayer = Cast< AprojectlevelCharacter>(OverlapResult.GetActor());
 			//ASwordCharacter* APlayer = Cast< ASwordCharacter>(OverlapResult.GetActor());
-			if (APlayer)
+			if (APlayer && APlayer->GetController()->IsPlayerController())
 			{
 				OwnerComp.GetBlackboardComponent()->SetValueAsObject(AHMonsterAIController::TargetKey, APlayer);
 
