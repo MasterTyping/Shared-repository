@@ -68,5 +68,6 @@ void AHMonster::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 
 void AHMonster::Attack()
 {
+	OnAttackEnd.Broadcast();
 }
 
