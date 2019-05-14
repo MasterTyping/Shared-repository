@@ -43,6 +43,8 @@ AHMonster::AHMonster()
 
 	AIControllerClass = AHMonsterAIController::StaticClass();
 	AutoPossessAI = EAutoPossessAI::PlacedInWorldOrSpawned;
+
+	IsAttacking = false;
 }
 
 // Called when the game starts or when spawned
@@ -59,6 +61,14 @@ void AHMonster::Tick(float DeltaTime)
 	GetCharacterMovement()->MaxWalkSpeed = 100.f;
 }
 
+void AHMonster::PostInitializeComponents()
+{
+	Super::PostInitializeComponents();
+	auto AnimInstance = Cast<UHAnimInstance>(GetMesh()->GetAnimInstance());
+
+	AnimInstance->OnMontageEnded.AddDynamic(this, &AHMonster::OnAttackMontageEnded);
+}
+
 // Called to bind functionality to input
 void AHMonster::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
@@ -68,6 +78,17 @@ void AHMonster::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 
 void AHMonster::Attack()
 {
+	if (IsAttacking)return;
+	auto AnimInstance = Cast<UHAnimInstance>(GetMesh()->GetAnimInstance());
+	if (nullptr == AnimInstance)return;
+
+	AnimInstance->PlayAttackMontage();
+	IsAttacking = true;
+}
+
+void AHMonster::OnAttackMontageEnded(UAnimMontage * Montage, bool bInterrupted)
+{
+	IsAttacking = false;
 	OnAttackEnd.Broadcast();
 }
 

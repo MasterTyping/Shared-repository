@@ -6,6 +6,12 @@
 UHAnimInstance::UHAnimInstance()
 {
 	CurrentPawnSpeed = 0.f;
+
+	static ConstructorHelpers::FObjectFinder<UAnimMontage> ATTACK_MONTAGE(TEXT("/Game/Golem/Animations/SK_Golem_Skeleton_Montage.SK_Golem_Skeleton_Montage"));
+	if (ATTACK_MONTAGE.Succeeded())
+	{
+		AttackMontage = ATTACK_MONTAGE.Object;
+	}
 }
 
 void UHAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
@@ -17,4 +23,9 @@ void UHAnimInstance::NativeUpdateAnimation(float DeltaSeconds)
 	{
 		CurrentPawnSpeed = Pawn->GetVelocity().Size();
 	}
+}
+
+void UHAnimInstance::PlayAttackMontage()
+{
+	Montage_Play(AttackMontage, 1.f);
 }
