@@ -212,7 +212,7 @@ void AprojectlevelCharacter::Attack()
 			}
 		}
 	}
-
+	AttackCheck();
 	
 }
 
@@ -226,7 +226,7 @@ void AprojectlevelCharacter::Skill()
 	if (SkillType == ESKillTypeEnum::TYPE_SKILL1)
 	{
 		GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Blue, TEXT("Skill 1."));
-		
+		AttackCheck();
 		if (World)
 		{
 			FActorSpawnParameters SpawnParams;
@@ -253,7 +253,7 @@ void AprojectlevelCharacter::Skill()
 
 	if (SkillType == ESKillTypeEnum::TYPE_SKILL2)
 	{
-
+		GEngine->AddOnScreenDebugMessage(-1, 10.f, FColor::Blue, TEXT("ATTack"));
 	}
 	//if (SkillEffect)
 	//{
@@ -312,6 +312,53 @@ void AprojectlevelCharacter::Walk()
 
 		GetCharacterMovement()->MaxWalkSpeed -= 10;
 
+	}
+}
+
+void AprojectlevelCharacter::AttackCheck()
+{
+	float FinalAttackRange = 10.f;
+	float AttackRadius = 50.f;
+	FHitResult HitResult;
+	FCollisionQueryParams Params(NAME_None, false, this);
+	bool bResult = GetWorld()->SweepSingleByChannel(
+		HitResult,
+		GetActorLocation(),
+		GetActorLocation() + GetActorForwardVector() * FinalAttackRange,
+		FQuat::Identity,
+		ECollisionChannel::ECC_GameTraceChannel12,
+		FCollisionShape::MakeSphere(AttackRadius),
+		Params
+	);
+
+
+#if ENABLE_DRAW_DEBUG
+
+	FVector TraceVec = GetActorForwardVector() * FinalAttackRange;
+	FVector Center = GetActorLocation() + TraceVec * 0.5f;
+	float HalfHeight = FinalAttackRange * 0.5f + AttackRadius;
+	FQuat CapsuleRot = FRotationMatrix::MakeFromZ(TraceVec).ToQuat();
+	FColor DrawColor = bResult ? FColor::Green : FColor::Red;
+	float DebugLifeTime = 3.f;
+
+	DrawDebugCapsule(GetWorld(),
+		Center,
+		HalfHeight,
+		AttackRadius,
+		CapsuleRot,
+		DrawColor,
+		false,
+		DebugLifeTime);
+
+#endif
+
+	if (bResult)
+	{
+		if (HitResult.Actor.IsValid())
+		{
+			FDamageEvent DamageEvent;
+			HitResult.Actor->TakeDamage(FinalAttackRange, DamageEvent, GetController(), this);
+		}
 	}
 }
 

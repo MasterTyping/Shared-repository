@@ -86,7 +86,7 @@ protected:
 
 	void Walk();
 
-	
+	void AttackCheck();
 	//Open Inventory
 	UFUNCTION(BlueprintCallable)
 	void OpenInventory();

@@ -6,6 +6,10 @@
 #include "Animation/AnimInstance.h"
 #include "HAnimInstance.generated.h"
 
+
+DECLARE_MULTICAST_DELEGATE(FOnNextAttackCheckDelegate);
+DECLARE_MULTICAST_DELEGATE(FOnNextAttackHitCheckDelegate);
+
 /**
  * 
  */
@@ -19,6 +23,16 @@ public:
 	virtual void NativeUpdateAnimation(float DeltaSeconds) override;
 
 	void PlayAttackMontage();
+
+public:
+	FOnNextAttackCheckDelegate OnNextAttackCheck;
+	FOnNextAttackHitCheckDelegate OnAttackHitCheck;
+private:
+	UFUNCTION()
+	void AnimNotify_AttackHitCheck();
+
+	UFUNCTION()
+	void AnimNotify_NextAttackCheck();
 private:
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Pawn, Meta = (AllowPrivateAccess = true))
 	float CurrentPawnSpeed;
