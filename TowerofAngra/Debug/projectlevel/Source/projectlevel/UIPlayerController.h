@@ -14,6 +14,7 @@ class PROJECTLEVEL_API AUIPlayerController : public APlayerController
 {
 	GENERATED_BODY()
 	
+public:
 	AUIPlayerController();
 	
 	class UHUDWidget* GetHUDWidget() const;

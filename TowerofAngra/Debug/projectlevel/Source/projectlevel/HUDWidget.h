@@ -2,7 +2,7 @@
 
 #pragma once
 
-#include "CoreMinimal.h"
+#include "EngineMinimal.h"
 #include "Blueprint/UserWidget.h"
 #include "HUDWidget.generated.h"
 
@@ -14,7 +14,12 @@ class PROJECTLEVEL_API UHUDWidget : public UUserWidget
 {
 	GENERATED_BODY()
 	
-	
-	
-	
+protected:
+	virtual void NativeConstruct() override;
+
+	void UpdateCharacterStat();
+	void UpdatePlayerState();
+private:
+	UPROPERTY()
+	class UImage* HPBar;
 };
