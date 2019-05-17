@@ -45,6 +45,8 @@ AHMonster::AHMonster()
 	AutoPossessAI = EAutoPossessAI::PlacedInWorldOrSpawned;
 
 	IsAttacking = false;
+
+	GetCapsuleComponent()->SetCollisionProfileName(TEXT("HCharater"));
 }
 
 // Called when the game starts or when spawned

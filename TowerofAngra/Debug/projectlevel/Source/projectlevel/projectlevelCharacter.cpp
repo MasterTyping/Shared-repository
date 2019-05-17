@@ -14,7 +14,7 @@
 #include "SkillEffect.h"
 #include "PickableItem.h"
 #include "UIPlayerController.h"
-
+#include "HMonster.h"
 #include "Particles/ParticleSystemComponent.h"
 
 #include "server.h"
@@ -317,16 +317,18 @@ void AprojectlevelCharacter::Walk()
 
 void AprojectlevelCharacter::AttackCheck()
 {
-	float FinalAttackRange = 10.f;
+	float FinalAttackRange = 100.f;
 	float AttackRadius = 50.f;
 	FHitResult HitResult;
+
 	FCollisionQueryParams Params(NAME_None, false, this);
+
 	bool bResult = GetWorld()->SweepSingleByChannel(
 		HitResult,
 		GetActorLocation(),
-		GetActorLocation() + GetActorForwardVector() * FinalAttackRange,
+		GetActorLocation() + GetActorForwardVector() *  FinalAttackRange,
 		FQuat::Identity,
-		ECollisionChannel::ECC_GameTraceChannel12,
+		ECollisionChannel::ECC_GameTraceChannel2,
 		FCollisionShape::MakeSphere(AttackRadius),
 		Params
 	);
@@ -340,6 +342,7 @@ void AprojectlevelCharacter::AttackCheck()
 	FQuat CapsuleRot = FRotationMatrix::MakeFromZ(TraceVec).ToQuat();
 	FColor DrawColor = bResult ? FColor::Green : FColor::Red;
 	float DebugLifeTime = 3.f;
+
 
 	DrawDebugCapsule(GetWorld(),
 		Center,
@@ -356,8 +359,9 @@ void AprojectlevelCharacter::AttackCheck()
 	{
 		if (HitResult.Actor.IsValid())
 		{
+			
 			FDamageEvent DamageEvent;
-			HitResult.Actor->TakeDamage(FinalAttackRange, DamageEvent, GetController(), this);
+			HitResult.Actor->TakeDamage(10.f, DamageEvent, GetController(), this);
 		}
 	}
 }
